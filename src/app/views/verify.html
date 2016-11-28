@@ -1,1 +1,51 @@
-Verify
+<section class="container" ng-if="!ver.loggedin">
+  <h2 class="text-center">403 Forbidden Access</h2>
+</section>
+<section class="container" ng-if="ver.loggedin">
+<div class="transparent-sheet active">
+</div>
+<div class="success-message">
+  <p class="text-center">Aadhar Verified Successfully</p>
+</div>
+  <div class="document">
+    <img src="assets/images/doc.jpg"/>
+  </div>
+  <button type="submit" class="button-lg center-block button button-block">Request OTP to Sign</button>
+  <div class="verification">
+    <div class="flex-center flex-dialog">
+      <img class="flex-image" src="assets/images/aadhar.png"/>
+      <div class="flex-column">
+      <ng-form class="flex-center" name="verificationform">
+        <div>
+          <input name="aadhar"
+           class="form-control flex-input text-center"
+           type="text"
+           pattern="\d{12}"
+           ng-model="ver.aadhar"
+           required>
+          <input  name="terms" class="flex-checkbox" type="checkbox" ng-model="ver.terms" required>
+          <label class="flex-label" for="terms">I agree to eSign this <span class="text-underline">KYC document</span> to get started</label>
+       </div>
+        <button type="submit" class="flex-button button button-block"
+                ng-click="ver.verifyAadhar()"
+                ng-disabled="verificationform.$invalid && !verificationform.$valid">
+                Verify
+        </button>
+      </ng-form>
+      <ng-form class="flex-center otp-form" name="otpform">
+        <input name="otp"
+           class="form-control otp-input flex-input text-center"
+           type="text"
+           pattern="\d{6}"
+           ng-model="ver.otp"
+           required>
+        <button type="submit" class="flex-button otp-button button button-block"
+                ng-click="ver.verifyOTP()"
+                ng-disabled="otpform.$invalid && !otpform.$valid">
+                Submit
+        </button>
+      </ng-form>
+      </div>
+    </div>
+  </div>
+</section>

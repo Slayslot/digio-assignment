@@ -4,7 +4,12 @@ angular
 
  /** @ngInject */
  function LoginServiceFunction(ProgressBarService) {
-  //  var vm = this;
-   ProgressBarService.setPreloaderConfig();
-   ProgressBarService.load();
+   var vm = this;
+   vm.loggedin=false;
+
+   vm.update = function(loggedin){
+     ProgressBarService.setPreloaderConfig();
+     ProgressBarService.load();
+     vm.loggedin=loggedin;
+   }
  }

@@ -1,1 +1,29 @@
-Login
+<section class="container">
+  <div class="gmail-login">
+    <p class="text-center">Gmail account? Proceed with</p>
+    <button class="center-block button-red button button-block">Google</button>
+    <p class="text-center"><span class="font-bold">TIP</span>: If using multiple Gmail accounts, select the account shown above.</p>
+  </div>
+  <p class="or-divider">OR</p>
+  <div class="email-login">
+    <ng-form name="emaillogin">
+      <input name="email"
+       class="form-control center-block text-center"
+       type="email"
+       placeholder="sanket@digio.in"
+       ng-model="login.email"
+       required>
+       <p class="text-center">
+         By continuing, I confirm to the
+         <a class="text-underline">Terms of Services</a> and
+         <a class="text-underline">Privacy Policy</a> of
+         <a class="text-underline">digio.in</a>
+       </p>
+      <button type="submit" class="center-block button button-block"
+              ng-click="login.submitEmail()"
+              ng-disabled="emaillogin.$invalid && !emaillogin.$valid">
+              Continue
+      </button>
+    </ng-form>
+  </div>
+</section>

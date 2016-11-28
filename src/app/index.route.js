@@ -30,13 +30,6 @@
       controller: 'VerifyController',
       controllerAs: 'ver'
     })
-    .state('request', {
-      url: '/request',
-      parent: 'base-home',
-      templateUrl: 'app/views/request.html',
-      controller: 'RequestController',
-      controllerAs: 'req'
-    })
   }
 
 })();
