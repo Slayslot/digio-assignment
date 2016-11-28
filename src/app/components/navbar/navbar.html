@@ -1,0 +1,8 @@
+<nav ng-cloak>
+  <h3 ng-if="nav.bools.login">Sign using <span class="text-underline">{{nav.name}}</span></h3>
+  <h3 ng-if="nav.bools.verify">Register Aadhaar</h3>
+  <div ng-if="nav.bools.request">
+    <h3>Signing...</h3>
+    <p>{{nav.name}}</p>
+  </div>
+</nav>

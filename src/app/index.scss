@@ -3,6 +3,9 @@ $mobile-width-2: 360px;
 $tablet-width: 768px;
 $desktop-width: 980px;
 $mobile-height: 550px;
+$silver: #bdc3c7;
+$midnightblue: #2c3e50;
+$belizehole: #2980b9;
 
 @mixin media-min-width($width){
   @media(min-width: $width){
@@ -23,4 +26,30 @@ $mobile-height: 550px;
   @media (max-height: $height){
     @content;
   }
+}
+/* NAV */
+body,html{
+  height: 100%;
+  min-width: 320px;
+}
+body{
+  overflow-x: hidden;
+  color: $midnightblue;
+}
+nav{
+  width:100vw;
+  height: 40px;
+  border-bottom: 2px solid $silver;
+  padding: 1em;
+
+  h3{
+    margin: 0;
+  }
+  p{
+    margin-top: 10px;
+    color: $belizehole;
+  }
+}
+.text-underline{
+  text-decoration: underline;
 }

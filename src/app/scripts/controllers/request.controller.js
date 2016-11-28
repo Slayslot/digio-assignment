@@ -6,7 +6,9 @@
     .controller('RequestController', RequestCtrlFunction);
 
   /** @ngInject */
-  function RequestCtrlFunction($log) {
+  function RequestCtrlFunction(NavService, $log) {
+    var documentName = 'Mutual Non-Disclosure Agreement'
+    NavService.update(documentName, 'request');
     $log.info('coming in from request');
   }
 })();

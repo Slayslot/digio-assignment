@@ -6,7 +6,8 @@
     .controller('LoginController', LoginCtrlFunction);
 
   /** @ngInject */
-  function LoginCtrlFunction($log) {
-    $log.info('coming in from login');
+  function LoginCtrlFunction($log, NavService) {
+    var emailUsed = 'sanket@digio.in';
+    NavService.update(emailUsed,'login');
   }
 })();
