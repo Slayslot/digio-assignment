@@ -1,0 +1,26 @@
+$mobile-width: 320px;
+$mobile-width-2: 360px;
+$tablet-width: 768px;
+$desktop-width: 980px;
+$mobile-height: 550px;
+
+@mixin media-min-width($width){
+  @media(min-width: $width){
+    @content;
+  }
+}
+@mixin media-max-width($width){
+  @media(max-width: $width){
+    @content;
+  }
+}
+@mixin media-min-height($height){
+  @media (min-height: $height){
+    @content;
+  }
+}
+@mixin media-max-height($height){
+  @media (max-height: $height){
+    @content;
+  }
+}
